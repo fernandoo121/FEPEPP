@@ -1,0 +1,636 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.Atmel.ARMGCC.CPP</ToolchainName>
+    <ProjectGuid>{8a148520-2851-40bd-8bd2-f2cf38fa63e1}</ProjectGuid>
+    <avrdevice>ATSAMD21G18A</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>CPP</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>DSA_SPBP</AssemblyName>
+    <Name>FEPEPP</Name>
+    <RootNamespace>DSA_SPBP</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
+    <BootSegment>2</BootSegment>
+    <ResetRule>0</ResetRule>
+    <eraseonlaunchrule>0</eraseonlaunchrule>
+    <EraseKey />
+    <AsfFrameworkConfig>
+      <framework-data xmlns="">
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.49.1" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+    <avrtool>com.atmel.avrdbg.tool.pickit4</avrtool>
+    <avrtoolserialnumber>BUR222472448</avrtoolserialnumber>
+    <avrdeviceexpectedsignature>0x10010305</avrdeviceexpectedsignature>
+    <avrtoolinterface>SWD</avrtoolinterface>
+    <com_atmel_avrdbg_tool_pickit4>
+      <ToolOptions>
+        <InterfaceProperties>
+          <SwdClock>2000000</SwdClock>
+        </InterfaceProperties>
+        <InterfaceName>SWD</InterfaceName>
+      </ToolOptions>
+      <ToolType>com.atmel.avrdbg.tool.pickit4</ToolType>
+      <ToolNumber>BUR222472448</ToolNumber>
+      <ToolName>MPLAB® PICkit 4</ToolName>
+    </com_atmel_avrdbg_tool_pickit4>
+    <avrtoolinterfaceclock>2000000</avrtoolinterfaceclock>
+    <custom>
+      <ToolOptions xmlns="">
+        <InterfaceProperties>
+        </InterfaceProperties>
+        <InterfaceName>SWD</InterfaceName>
+      </ToolOptions>
+      <ToolType xmlns="">custom</ToolType>
+      <ToolNumber xmlns="">
+      </ToolNumber>
+      <ToolName xmlns="">Custom Programming Tool</ToolName>
+    </custom>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <ToolchainSettings>
+      <ArmGccCpp>
+        <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+        <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
+        <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
+        <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+        <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
+        <armgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>F_CPU=48000000L</Value>
+            <Value>ARDUINO=10805</Value>
+            <Value>ARDUINO_SAMD_MKRWAN1300</Value>
+            <Value>ARDUINO_ARCH_SAMD</Value>
+            <Value>__SAMD21G18A__</Value>
+            <Value>USB_VID=0x2341</Value>
+            <Value>USB_PID=0x8053</Value>
+            <Value>USBCON</Value>
+            <Value>DEBUG</Value>
+            <Value>NDEBUG</Value>
+            <Value>NDEBUG</Value>
+            <Value>NDEBUG</Value>
+          </ListValues>
+        </armgcc.compiler.symbols.DefSymbols>
+        <armgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\arm\CMSIS\5.4.0\CMSIS\Core\Include\</Value>
+            <Value>%24(PackRepoDir)\atmel\SAMD21_DFP\1.3.395\samd21a\include</Value>
+            <Value>../../Libreria/include/core</Value>
+            <Value>../../Libreria/include/core/USB</Value>
+            <Value>../../Libreria/include/variants</Value>
+          </ListValues>
+        </armgcc.compiler.directories.IncludePaths>
+        <armgcc.compiler.optimization.level>Optimize for size (-Os)</armgcc.compiler.optimization.level>
+        <armgcc.compiler.optimization.OtherFlags>-fno-threadsafe-statics -fno-exceptions</armgcc.compiler.optimization.OtherFlags>
+        <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <armgcc.compiler.optimization.PrepareDataForGarbageCollection>True</armgcc.compiler.optimization.PrepareDataForGarbageCollection>
+        <armgcc.compiler.optimization.DebugLevel>Maximum (-g3)</armgcc.compiler.optimization.DebugLevel>
+        <armgcc.compiler.warnings.AllWarnings>True</armgcc.compiler.warnings.AllWarnings>
+        <armgcc.compiler.miscellaneous.OtherFlags>-std=gnu11 --param max-inline-insns-single=500 -nostdlib</armgcc.compiler.miscellaneous.OtherFlags>
+        <armgcccpp.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>USBCON</Value>
+            <Value>F_CPU=48000000L</Value>
+            <Value>ARDUINO=10805</Value>
+            <Value>ARDUINO_SAMD_MKRWAN1300</Value>
+            <Value>ARDUINO_ARCH_SAMD</Value>
+            <Value>__SAMD21G18A__</Value>
+            <Value>USB_VID=0x2341</Value>
+            <Value>USB_PID=0x8053</Value>
+            <Value>NDEBUG</Value>
+            <Value>NDEBUG</Value>
+            <Value>NDEBUG</Value>
+          </ListValues>
+        </armgcccpp.compiler.symbols.DefSymbols>
+        <armgcccpp.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\arm\CMSIS\5.4.0\CMSIS\Core\Include\</Value>
+            <Value>%24(PackRepoDir)\atmel\SAMD21_DFP\1.3.395\samd21a\include</Value>
+            <Value>../../Libreria/include/core</Value>
+            <Value>../../Libreria/include/core/USB</Value>
+            <Value>../../Libreria/include/SD</Value>
+            <Value>../../Libreria/include/variants</Value>
+          </ListValues>
+        </armgcccpp.compiler.directories.IncludePaths>
+        <armgcccpp.compiler.optimization.level>Optimize for size (-Os)</armgcccpp.compiler.optimization.level>
+        <armgcccpp.compiler.optimization.OtherFlags>-fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections</armgcccpp.compiler.optimization.OtherFlags>
+        <armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <armgcccpp.compiler.optimization.PrepareDataForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareDataForGarbageCollection>
+        <armgcccpp.compiler.optimization.EnableLongCalls>False</armgcccpp.compiler.optimization.EnableLongCalls>
+        <armgcccpp.compiler.optimization.DebugLevel>Maximum (-g3)</armgcccpp.compiler.optimization.DebugLevel>
+        <armgcccpp.compiler.warnings.AllWarnings>True</armgcccpp.compiler.warnings.AllWarnings>
+        <armgcccpp.compiler.miscellaneous.OtherFlags>-std=gnu++11 -nostdlib --param max-inline-insns-single=500 -fno-rtti -fno-exceptions -MMD</armgcccpp.compiler.miscellaneous.OtherFlags>
+        <armgcccpp.linker.general.UseNewlibNano>True</armgcccpp.linker.general.UseNewlibNano>
+        <armgcccpp.linker.general.AdditionalSpecs>Use syscall stubs (--specs=nosys.specs)</armgcccpp.linker.general.AdditionalSpecs>
+        <armgcccpp.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </armgcccpp.linker.libraries.Libraries>
+        <armgcccpp.linker.libraries.LibrarySearchPaths>
+          <ListValues>
+            <Value>../device</Value>
+            <Value>../Device_Startup</Value>
+            <Value>%24(ProjectDir)\Device_Startup</Value>
+          </ListValues>
+        </armgcccpp.linker.libraries.LibrarySearchPaths>
+        <armgcccpp.linker.optimization.GarbageCollectUnusedSections>True</armgcccpp.linker.optimization.GarbageCollectUnusedSections>
+        <armgcccpp.linker.memorysettings.ExternalRAM>False</armgcccpp.linker.memorysettings.ExternalRAM>
+        <armgcccpp.linker.miscellaneous.LinkerFlags>-Wl,--section-start=.text=0x2000 -Tsamd21g18a_flash.ld</armgcccpp.linker.miscellaneous.LinkerFlags>
+        <armgcccpp.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\arm\CMSIS\5.4.0\CMSIS\Core\Include\</Value>
+            <Value>%24(PackRepoDir)\atmel\SAMD21_DFP\1.3.395\samd21a\include</Value>
+          </ListValues>
+        </armgcccpp.assembler.general.IncludePaths>
+        <armgcccpp.preprocessingassembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\arm\CMSIS\5.4.0\CMSIS\Core\Include\</Value>
+            <Value>%24(PackRepoDir)\atmel\SAMD21_DFP\1.3.395\samd21a\include</Value>
+          </ListValues>
+        </armgcccpp.preprocessingassembler.general.IncludePaths>
+        <armgcccpp.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</armgcccpp.preprocessingassembler.debugging.DebugLevel>
+      </ArmGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <ArmGccCpp>
+        <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+        <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
+        <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
+        <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+        <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
+        <armgcc.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>F_CPU=48000000UL</Value>
+            <Value>TICK_RTOS=1000UL</Value>
+            <Value>ARDUINO=10805</Value>
+            <Value>ARDUINO_SAMD_MKRWAN1300</Value>
+            <Value>ARDUINO_ARCH_SAMD</Value>
+            <Value>__SAMD21G18A__</Value>
+            <Value>USB_VID=0x2341</Value>
+            <Value>USB_PID=0x8053</Value>
+            <Value>USBCON</Value>
+            <Value>USB_MANUFACTURER="\"AMGProyectos SA\""</Value>
+            <Value>USB_PRODUCT="\"ModuloSPBP Virtual COM Port\""</Value>
+            <Value>DEBUG</Value>
+            <Value>DEBUG</Value>
+            <Value>DEBUG</Value>
+          </ListValues>
+        </armgcc.compiler.symbols.DefSymbols>
+        <armgcc.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\arm\CMSIS\5.4.0\CMSIS\Core\Include\</Value>
+            <Value>%24(PackRepoDir)\atmel\SAMD21_DFP\1.3.395\samd21a\include</Value>
+            <Value>../Device_Init</Value>
+            <Value>../FWE_INT/General/include</Value>
+            <Value>../FWE_INT/Potable/include</Value>
+            <Value>../FWE_PRO/Include</Value>
+            <Value>../FWE_COM/Include</Value>
+            <Value>../FWE_DDA/Include</Value>
+            <Value>../FWE_VIN/Include</Value>
+            <Value>../FWE_FTE/Include</Value>
+            <Value>..</Value>
+            <Value>../ArduinoCore/include/core</Value>
+            <Value>../ArduinoCore/include/core/USB</Value>
+            <Value>../ArduinoCore/include/FreeRTOS</Value>
+            <Value>../ArduinoCore/include/SD</Value>
+            <Value>../ArduinoCore/include/SPI</Value>
+            <Value>../ArduinoCore/include/variants</Value>
+            <Value>../ArduinoCore/include/PubSubClient</Value>
+            <Value>../ArduinoCore/include/TinyGSM</Value>
+          </ListValues>
+        </armgcc.compiler.directories.IncludePaths>
+        <armgcc.compiler.optimization.level>Optimize debugging experience (-Og)</armgcc.compiler.optimization.level>
+        <armgcc.compiler.optimization.OtherFlags>-fno-exceptions</armgcc.compiler.optimization.OtherFlags>
+        <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <armgcc.compiler.optimization.PrepareDataForGarbageCollection>True</armgcc.compiler.optimization.PrepareDataForGarbageCollection>
+        <armgcc.compiler.optimization.DebugLevel>Maximum (-g3)</armgcc.compiler.optimization.DebugLevel>
+        <armgcc.compiler.warnings.AllWarnings>True</armgcc.compiler.warnings.AllWarnings>
+        <armgcc.compiler.miscellaneous.OtherFlags>-std=gnu11 --param max-inline-insns-single=500 -nostdlib</armgcc.compiler.miscellaneous.OtherFlags>
+        <armgcccpp.compiler.symbols.DefSymbols>
+          <ListValues>
+            <Value>F_CPU=48000000UL</Value>
+            <Value>TICK_RTOS=1000UL</Value>
+            <Value>ARDUINO=10805</Value>
+            <Value>ARDUINO_SAMD_MKRWAN1300</Value>
+            <Value>ARDUINO_ARCH_SAMD</Value>
+            <Value>__SAMD21G18A__</Value>
+            <Value>USB_VID=0x2341</Value>
+            <Value>USB_PID=0x8053</Value>
+            <Value>USBCON</Value>
+            <Value>USB_MANUFACTURER="\"AMGProyectos SA\""</Value>
+            <Value>USB_PRODUCT="\"ModuloSPBP Virtual COM Port\""</Value>
+            <Value>DEBUG</Value>
+            <Value>DEBUG</Value>
+            <Value>DEBUG</Value>
+          </ListValues>
+        </armgcccpp.compiler.symbols.DefSymbols>
+        <armgcccpp.compiler.directories.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\arm\CMSIS\5.4.0\CMSIS\Core\Include\</Value>
+            <Value>%24(PackRepoDir)\atmel\SAMD21_DFP\1.3.395\samd21a\include</Value>
+            <Value>../Device_Init</Value>
+            <Value>../FWE_INT/General/include</Value>
+            <Value>../FWE_INT/Potable/include</Value>
+            <Value>../FWE_PRO/Include</Value>
+            <Value>../FWE_COM/Include</Value>
+            <Value>../FWE_DDA/Include</Value>
+            <Value>../FWE_VIN/Include</Value>
+            <Value>../FWE_FTE/Include</Value>
+            <Value>..</Value>
+            <Value>../ArduinoCore/include/core</Value>
+            <Value>../ArduinoCore/include/core/USB</Value>
+            <Value>../ArduinoCore/include/FreeRTOS</Value>
+            <Value>../ArduinoCore/include/SD</Value>
+            <Value>../ArduinoCore/include/SPI</Value>
+            <Value>../ArduinoCore/include/variants</Value>
+            <Value>../ArduinoCore/include/TinyGSM</Value>
+            <Value>../ArduinoCore/include/PubSubClient</Value>
+          </ListValues>
+        </armgcccpp.compiler.directories.IncludePaths>
+        <armgcccpp.compiler.optimization.level>Optimize debugging experience (-Og)</armgcccpp.compiler.optimization.level>
+        <armgcccpp.compiler.optimization.OtherFlags>-fno-threadsafe-statics -fno-exceptions -ffunction-sections -fdata-sections</armgcccpp.compiler.optimization.OtherFlags>
+        <armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareFunctionsForGarbageCollection>
+        <armgcccpp.compiler.optimization.PrepareDataForGarbageCollection>True</armgcccpp.compiler.optimization.PrepareDataForGarbageCollection>
+        <armgcccpp.compiler.optimization.EnableLongCalls>False</armgcccpp.compiler.optimization.EnableLongCalls>
+        <armgcccpp.compiler.optimization.DebugLevel>Maximum (-g3)</armgcccpp.compiler.optimization.DebugLevel>
+        <armgcccpp.compiler.warnings.AllWarnings>True</armgcccpp.compiler.warnings.AllWarnings>
+        <armgcccpp.compiler.miscellaneous.OtherFlags>-std=gnu++11 -nostdlib --param max-inline-insns-single=500 -fno-rtti -fno-exceptions -MMD</armgcccpp.compiler.miscellaneous.OtherFlags>
+        <armgcccpp.linker.general.UseNewlibNano>True</armgcccpp.linker.general.UseNewlibNano>
+        <armgcccpp.linker.general.AdditionalSpecs>Use syscall stubs (--specs=nosys.specs)</armgcccpp.linker.general.AdditionalSpecs>
+        <armgcccpp.linker.libraries.Libraries>
+          <ListValues>
+            <Value>libm</Value>
+          </ListValues>
+        </armgcccpp.linker.libraries.Libraries>
+        <armgcccpp.linker.libraries.LibrarySearchPaths>
+          <ListValues>
+            <Value>%24(ProjectDir)\Device_Startup</Value>
+            <Value>../Device_Startup/ArduinoCore</Value>
+          </ListValues>
+        </armgcccpp.linker.libraries.LibrarySearchPaths>
+        <armgcccpp.linker.optimization.GarbageCollectUnusedSections>True</armgcccpp.linker.optimization.GarbageCollectUnusedSections>
+        <armgcccpp.linker.memorysettings.ExternalRAM />
+        <armgcccpp.linker.miscellaneous.LinkerFlags>-Wl,--section-start=.text=0x0000 -Tflash_without_bootloader.ld</armgcccpp.linker.miscellaneous.LinkerFlags>
+        <armgcccpp.assembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\arm\CMSIS\5.4.0\CMSIS\Core\Include\</Value>
+            <Value>%24(PackRepoDir)\atmel\SAMD21_DFP\1.3.395\samd21a\include</Value>
+          </ListValues>
+        </armgcccpp.assembler.general.IncludePaths>
+        <armgcccpp.assembler.debugging.DebugLevel>Default (-g)</armgcccpp.assembler.debugging.DebugLevel>
+        <armgcccpp.preprocessingassembler.general.IncludePaths>
+          <ListValues>
+            <Value>%24(PackRepoDir)\arm\CMSIS\5.4.0\CMSIS\Core\Include\</Value>
+            <Value>%24(PackRepoDir)\atmel\SAMD21_DFP\1.3.395\samd21a\include</Value>
+          </ListValues>
+        </armgcccpp.preprocessingassembler.general.IncludePaths>
+        <armgcccpp.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</armgcccpp.preprocessingassembler.debugging.DebugLevel>
+      </ArmGccCpp>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="ArduinoCore\ArduinoCore.cppproj">
+      <Name>ArduinoCore</Name>
+      <Project>{bd31ffa4-e2b5-47ff-b84f-d53505f531ff}</Project>
+      <Private>True</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ArduinoCore_Link\" />
+    <Folder Include="Device_Startup\" />
+    <Folder Include="Device_Startup\ArduinoCore\" />
+    <Folder Include="FWE_COM" />
+    <Folder Include="FWE_COM\Include" />
+    <Folder Include="FWE_COM\Portable" />
+    <Folder Include="FWE_COM\Routines" />
+    <Folder Include="FWE_COM\Routines\Subroutines" />
+    <Folder Include="FWE_FTE\" />
+    <Folder Include="FWE_FTE\Include\" />
+    <Folder Include="FWE_FTE\Portable\" />
+    <Folder Include="FWE_FTE\Routines\" />
+    <Folder Include="FWE_FTE\Routines\Subroutines\" />
+    <Folder Include="FWE_DDA" />
+    <Folder Include="FWE_DDA\Include" />
+    <Folder Include="FWE_DDA\Portable" />
+    <Folder Include="FWE_DDA\Routines" />
+    <Folder Include="FWE_INT\" />
+    <Folder Include="FWE_INT\General\" />
+    <Folder Include="FWE_INT\General\include\" />
+    <Folder Include="FWE_INT\General\user_interface\" />
+    <Folder Include="FWE_INT\Potable\" />
+    <Folder Include="FWE_INT\Potable\include\" />
+    <Folder Include="FWE_INT\Potable\peripheral\" />
+    <Folder Include="FWE_INT\Potable\peripheral\eic\" />
+    <Folder Include="FWE_INT\Potable\peripheral\port\" />
+    <Folder Include="FWE_INT\Potable\peripheral\rtc\" />
+    <Folder Include="FWE_INT\Potable\peripheral\sercom\" />
+    <Folder Include="FWE_INT\Simulation\" />
+    <Folder Include="FWE_INT\Simulation\sim_com" />
+    <Folder Include="FWE_PRO\" />
+    <Folder Include="FWE_PRO\Include\" />
+    <Folder Include="FWE_PRO\Portable\" />
+    <Folder Include="FWE_PRO\Routines\" />
+    <Folder Include="FWE_PRO\Routines\Subroutines\" />
+    <Folder Include="FWE_VIN\" />
+    <Folder Include="FWE_VIN\Include\" />
+    <Folder Include="FWE_VIN\Portable\" />
+    <Folder Include="FWE_VIN\Routines\" />
+    <Folder Include="FWE_VIN\Routines\Subroutines\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Device_Startup\ArduinoCore\flash_without_bootloader.ld">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="Device_Startup\ArduinoCore\flash_with_bootloader.ld">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="Device_Startup\ArduinoCore\samd21g18a_flash.ld">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="Device_Startup\ArduinoCore\samd21g18a_sram.ld">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="Device_Startup\samd21g18a_flash.ld">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="Device_Startup\samd21g18a_sram.ld">
+      <SubType>compile</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArduinoCore_Link\link_Mqtt.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ArduinoCore_Link\handler_linked.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ArduinoCore_Link\link_ArduinoCore.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Device_Startup\startup_samd21.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Device_Startup\system_samd21.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_COM\Include\com_routines.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_COM\Include\slave_RF_setting.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_COM\Include\com.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_COM\Include\com_set.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_COM\Include\slave_RF_operation.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_COM\main_com.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_COM\Portable\slave_RF_setting.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_COM\Portable\slave_RF_operation.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_COM\Routines\protocolo.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_COM\Routines\recepcion.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_COM\Routines\Subroutines\acciones_protocolo.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_DDA\Routines\sim868.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_FTE\Include\fte_routines.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_FTE\Include\slave_BMS.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_FTE\Include\fte.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_FTE\Include\fte_set.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_FTE\main_fte.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_FTE\Portable\slave_BMS.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_DDA\Include\dda_routines.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_DDA\Include\slave_IOT.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_DDA\Include\dda.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_DDA\Include\dda_set.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_DDA\main_dda.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_DDA\Portable\slave_IOT.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\General\include\link_arduinocore.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <None Include="FWE_INT\General\include\link_mqtt.h">
+      <SubType>compile</SubType>
+    </None>
+    <Compile Include="FWE_INT\General\include\metadata.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\General\include\gateway.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\General\include\gateway_set.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\General\include\user_interface.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\General\metadata.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\General\system.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\General\user_interface\indications.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\General\user_interface\requests.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\Potable\include\eic.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\Potable\include\gateway_portable.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\Potable\include\port.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\Potable\include\rtc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\Potable\include\samd21_init.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\Potable\include\sercom.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\Potable\peripheral\eic\extint_iot.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\Potable\peripheral\eic\extint_rf.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\Potable\peripheral\eic\extint_rfid.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\Potable\peripheral\eic\nvic_handler.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\Potable\peripheral\peripheral_init.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\Potable\peripheral\port\gpio_iot.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\Potable\peripheral\port\gpio_rf.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\Potable\peripheral\port\gpio_rfid.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\Potable\peripheral\port\gpio_indications.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\Potable\peripheral\rtc\rtc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\Potable\peripheral\sercom\i2c_1.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\Potable\peripheral\sercom\spi_2.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\Potable\system.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\Simulation\sim_dda.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\Simulation\sim_com\generacion_metadata.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\Simulation\sim_com\sim_com.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\Simulation\sim_fte.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\Simulation\sim_pro.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_INT\Simulation\sim_vin.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_PRO\Include\pro_routines.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_PRO\Include\slave_FlashDrive.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_PRO\Include\pro.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_PRO\Include\pro_set.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_PRO\main_pro.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_PRO\Portable\slave_FlashDrive.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_PRO\Routines\generacion.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_PRO\Routines\recuperacion.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_PRO\Routines\relevamiento.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_PRO\Routines\respaldo.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_PRO\Routines\Subroutines\inicializar_fsm.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_VIN\Include\vin_routines.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_VIN\Include\slave_RFID.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_VIN\Include\vin.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_VIN\Include\vin_set.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_VIN\main_vin.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="FWE_VIN\Portable\slave_RFID.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="main.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="release_management.h">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>

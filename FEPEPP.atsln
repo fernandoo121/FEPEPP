@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Atmel Studio Solution File, Format Version 11.00
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "ArduinoCore", "Recursos\ArduinoCore\ArduinoCore.cppproj", "{BD31FFA4-E2B5-47FF-B84F-D53505F531FF}"
+EndProject
+Project("{E66E83B9-2572-4076-B26E-6BE79FF3018A}") = "FEPEPP", "Recursos\FEPEPP.cppproj", "{8A148520-2851-40BD-8BD2-F2CF38FA63E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Release|ARM = Release|ARM
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BD31FFA4-E2B5-47FF-B84F-D53505F531FF}.Debug|ARM.ActiveCfg = Debug|ARM
+		{BD31FFA4-E2B5-47FF-B84F-D53505F531FF}.Debug|ARM.Build.0 = Debug|ARM
+		{BD31FFA4-E2B5-47FF-B84F-D53505F531FF}.Release|ARM.ActiveCfg = Release|ARM
+		{BD31FFA4-E2B5-47FF-B84F-D53505F531FF}.Release|ARM.Build.0 = Release|ARM
+		{8A148520-2851-40BD-8BD2-F2CF38FA63E1}.Debug|ARM.ActiveCfg = Debug|ARM
+		{8A148520-2851-40BD-8BD2-F2CF38FA63E1}.Debug|ARM.Build.0 = Debug|ARM
+		{8A148520-2851-40BD-8BD2-F2CF38FA63E1}.Release|ARM.ActiveCfg = Release|ARM
+		{8A148520-2851-40BD-8BD2-F2CF38FA63E1}.Release|ARM.Build.0 = Release|ARM
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
